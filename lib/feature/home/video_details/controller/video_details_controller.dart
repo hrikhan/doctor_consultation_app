@@ -13,6 +13,11 @@ class VideoDetailController extends GetxController {
   final Map<int, VideoPlayerController> videoPlayers = {};
 
   @override
+  /// Called when the object is initialized.
+  ///
+  /// Sets up the [PageController] with the initial page index from [currentIndex].
+  /// Initializes the [VideoPlayerController] for the current index by calling
+  /// [_initializeVideo].
   void onInit() {
     super.onInit();
     pageController = PageController(initialPage: currentIndex.value);
@@ -25,8 +30,10 @@ class VideoDetailController extends GetxController {
       await videoPlayers[index]?.dispose();
     }
 
-    final controller = VideoPlayerController.network(
-      videoController.videos[index].videoUrl,
+    // Use networkUrl (accepts a Uri) since `VideoPlayerController.network` is
+    // deprecated in newer video_player versions.
+    final controller = VideoPlayerController.networkUrl(
+      Uri.parse(videoController.videos[index].videoUrl),
     );
 
     videoPlayers[index] = controller;
