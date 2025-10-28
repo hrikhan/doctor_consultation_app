@@ -1,4 +1,5 @@
 import 'package:doctor_consultation/core/common/style/textstyle.dart';
+import 'package:doctor_consultation/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,7 +29,11 @@ class CustomAppBarWithSearch extends StatelessWidget
           Container(
             height: 120.h,
             decoration: BoxDecoration(
-              color: const Color(0xFF1976D2),
+              gradient: LinearGradient(
+                colors: [AppColors.primary, Colors.tealAccent],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(20.r),
               ),
@@ -40,7 +45,7 @@ class CustomAppBarWithSearch extends StatelessWidget
                 ),
               ],
             ),
-            padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 30.h),
+            padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 40.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,11 +82,11 @@ class CustomAppBarWithSearch extends StatelessWidget
             child: Container(
               height: 50.h,
               decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(16.r),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(0.r),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.3),
                     spreadRadius: 2,
                     blurRadius: 5,
                     offset: const Offset(0, 3),
@@ -91,7 +96,7 @@ class CustomAppBarWithSearch extends StatelessWidget
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Row(
                 children: [
-                  Icon(Icons.search, color: Colors.blue, size: 24.sp),
+                  Icon(Icons.search, color: AppColors.primary, size: 24.sp),
                   SizedBox(width: 8.w),
                   Expanded(
                     child: TextField(

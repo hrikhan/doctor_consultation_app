@@ -14,11 +14,11 @@ class VideoController extends GetxController {
     videos.value = [
       VideoModel(
         id: '1',
-        title: 'Big Buck Bunny',
+        title: 'Health Tips for You',
         thumbnailUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Big_Buck_Bunny_thumbnail_vlc.png/1200px-Big_Buck_Bunny_thumbnail_vlc.png',
+            'https://thumbs.dreamstime.com/b/close-up-male-doctor-holding-sign-text-health-tips-close-up-male-doctor-gloves-holding-sign-199016028.jpg',
         videoUrl:
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            'https://res.cloudinary.com/dofsibxao/video/upload/v1759308575/samples/dance-2.mp4',
       ),
       // VideoModel(
       //   id: '2',
@@ -31,15 +31,15 @@ class VideoController extends GetxController {
         id: '3',
         title: 'For Bigger Escape',
         thumbnailUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Big_Buck_Bunny_thumbnail_vlc.png/1200px-Big_Buck_Bunny_thumbnail_vlc.png',
+            "https://img.freepik.com/free-photo/young-female-doctor-wearing-medical-robe-mask-stethoscope-stretching-yes-note-isolated-green-wall-with-copy-space_141793-79427.jpg?semt=ais_hybrid&w=740&q=80",
         videoUrl:
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+            'https://player.cloudinary.com/embed/?cloud_name=dofsibxao&public_id=samples%2Felephants&profile=cld-default',
       ),
       VideoModel(
         id: '1',
         title: 'Big Buck Bunny',
         thumbnailUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Big_Buck_Bunny_thumbnail_vlc.png/1200px-Big_Buck_Bunny_thumbnail_vlc.png',
+            'https://www.adsc.com/hs-fs/hubfs/shutterstock_156431549.jpg?width=250&name=shutterstock_156431549.jpg',
         videoUrl:
             'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
       ),

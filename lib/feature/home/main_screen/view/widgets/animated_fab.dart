@@ -1,7 +1,5 @@
-import 'package:doctor_consultation/core/common/style/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'dart:math';
 
 class AnimatedFAB extends StatefulWidget {
@@ -63,28 +61,60 @@ class _AnimatedFABState extends State<AnimatedFAB>
       position: _slideAnimation,
       child: FadeTransition(
         opacity: _fadeAnimation,
-        child: FloatingActionButton(
-          elevation: 8,
-          backgroundColor: Colors.black,
-          onPressed: widget.onTap,
-          child: AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              // Slight flicker animation
-              double flicker =
-                  sin(DateTime.now().millisecond * pi / 180) * 0.02;
-              return Transform.scale(
-                scale: 1 + flicker,
-                child: Text(
-                  "AI",
-                  style: TextStyle(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w700,
-                    foreground: Paint()..shader = _fireShader, // <-- Important
-                  ),
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: SweepGradient(
+              colors: [
+                Colors.yellow.shade200,
+                Colors.orangeAccent,
+                Colors.deepOrange,
+                Colors.redAccent,
+                Colors.yellow.shade200,
+              ],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.deepOrange.withValues(alpha: 0.4),
+                blurRadius: 18,
+                spreadRadius: 4,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(3.r),
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.black,
+              ),
+              child: FloatingActionButton(
+                elevation: 8,
+                backgroundColor: Colors.transparent,
+                splashColor: Colors.deepOrangeAccent,
+                onPressed: widget.onTap,
+                child: AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, child) {
+                    // Slight flicker animation to mimic a flame
+                    final double flicker =
+                        sin(DateTime.now().millisecond * pi / 180) * 0.02;
+                    return Transform.scale(
+                      scale: 1 + flicker,
+                      child: Text(
+                        "AI",
+                        style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                          foreground: Paint()
+                            ..shader = _fireShader, // <-- Important
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
+              ),
+            ),
           ),
         ),
       ),

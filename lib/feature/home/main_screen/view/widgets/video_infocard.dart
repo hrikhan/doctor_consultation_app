@@ -30,7 +30,7 @@ class DoctorInfoCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.r),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.25),
+              color: Colors.grey.withValues(alpha: 0.3),
               blurRadius: 6,
               offset: const Offset(0, 4),
             ),
@@ -68,7 +68,7 @@ class DoctorInfoCard extends StatelessWidget {
                     title,
                     style: GetTextStyle.heading(
                       fontSize: 16,
-                      color: AppColors.primary,
+                      fontWeight: FontWeight.w600,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
